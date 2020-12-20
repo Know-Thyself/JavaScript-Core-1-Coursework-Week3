@@ -17,9 +17,14 @@ var names = [
   "Ahmed",
 ];
 
-var longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 
-console.log(longNameThatStartsWithA);
+const longNameThatStartsWithA = names.find((string) => {
+  return string.startsWith('A') && string.length > 7;
+})
+
+console.log(JSON.stringify(longNameThatStartsWithA));
+
+
 
 /* EXPECTED OUTPUT */
 // "Alexandra"

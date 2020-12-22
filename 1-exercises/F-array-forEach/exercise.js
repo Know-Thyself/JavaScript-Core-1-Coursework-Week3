@@ -9,6 +9,37 @@
 
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+
+function multiplesOfThreeAndFive(num) {
+  if (num % 3 === 0) {
+    return "Fizz";
+  } else if (num % 5 === 0) {
+    return "Buzz";
+  } else if (num % 3 === 0 && num % 5 === 0) {
+    return "FizzBuzz";
+  } else {
+    return num;
+  }
+}
+
+var multiplesOf = arr.map(multiplesOfThreeAndFive);
+arr.map(multiplesOfThreeAndFive).forEach(function multiplesOfThreeAndFive(num) {
+  if (num % 3 === 0) {
+    console.log("Fizz");
+  } else if (num % 5 === 0) {
+    console.log("Buzz");
+  } else if (num % 3 === 0 && num % 5 === 0) {
+    console.log("FizzBuzz");
+  } else {
+    console.log(num);
+  }
+});
+
+// I tried the following shorter possible ways but I keep getting an error message that says log is not defined.
+//multiplesOf.forEach(log);
+
+//arr.map(multiplesOfThreeAndFive).forEach(log);
+
 /* EXPECTED OUTPUT */
 
 /*

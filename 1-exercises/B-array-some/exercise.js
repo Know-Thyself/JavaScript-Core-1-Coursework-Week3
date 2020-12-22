@@ -15,13 +15,8 @@ var pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 var students = ["Islam", "Lesley", "Harun", "Rukmini"];
 var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
-function isNull(element) {
 
-  return element === null;
-
-}
-
-const containsNull = pairsByIndex.some(isNull);
+const containsNull = pairsByIndex.some(isNull => isNull === null);
 
 if (containsNull === true) {
   process.exit(1);

@@ -13,7 +13,18 @@
 let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story.replace("", "");
+  // I tried the following method but it did not work
+//let result = story.replace(/dogs/gi,"cats").replace(/day/gi,"night").replace(/10/gi,"10000").replace(/great/gi,"brilliant");
+
+// The following code has delivered the expected outcome but it didn't pass the test and I would like to know why.
+var mapObj = {dogs:"cats", day:"night", 10:"10000", great:"brilliant"};
+
+  var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
+  result = story.replace(re, function(matched){
+    return mapObj[matched];
+  });
+  console.log(result);
+
 
 /* EXPECTED OUTPUT */
 

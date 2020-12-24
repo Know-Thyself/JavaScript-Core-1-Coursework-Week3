@@ -11,7 +11,17 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function safeLevels() {}
+
+function safeLevels (arr) {
+  const number = arr.map(function(level){
+      return level.substring(0, level.length - 1);
+  });
+
+const safeLevels = number.filter(function(level){
+  return level > 19.5 && level < 23.5;
+});
+return `${safeLevels[0]}%`;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

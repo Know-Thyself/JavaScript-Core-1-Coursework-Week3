@@ -8,7 +8,7 @@
 */
 
 function eligibleStudents() {
-
+  return attendances.filter(entitled => entitled[1] >= 8).map(entitled => entitled[0]);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

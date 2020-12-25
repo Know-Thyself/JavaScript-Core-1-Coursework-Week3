@@ -15,7 +15,13 @@
   
 */
 
-function colonisers() {}
+function colonisers(voyagers) {
+  voyagers1 = voyagers.filter(item => item[0] === "A" && item.includes("family"));
+  return voyagers1;
+  
+}
+console.log(colonisers);
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

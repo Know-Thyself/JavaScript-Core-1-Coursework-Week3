@@ -17,13 +17,13 @@ let story =
 //let result = story.replace(/dogs/gi,"cats").replace(/day/gi,"night").replace(/10/gi,"10000").replace(/great/gi,"brilliant");
 
 // The following code has delivered the expected outcome but it didn't pass the test and I would like to know why.
-var mapObj = {dogs:"cats", day:"night", 10:"10000", great:"brilliant"};
+var mapObj = {dogs:"cats", day:"night", 10:"100000", great:"brilliant"};
 
   var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
-  result = story.replace(re, function(matched){
+  let result = story.replace(re, function(matched){
     return mapObj[matched];
   });
-  console.log(result);
+  console.log(JSON.stringify(result));
 
 
 /* EXPECTED OUTPUT */

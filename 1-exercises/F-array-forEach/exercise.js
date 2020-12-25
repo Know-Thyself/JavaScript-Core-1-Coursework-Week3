@@ -35,7 +35,7 @@ arr.map(multiplesOfThreeAndFive).forEach(function multiplesOfThreeAndFive(num) {
   }
 });
 
-// I tried the following shorter possible ways but I keep getting an error message that says log is not defined.
+// I tried the following shorter possible ways but I kept getting an error message that says log is not defined.
 //multiplesOf.forEach(log);
 
 //arr.map(multiplesOfThreeAndFive).forEach(log);

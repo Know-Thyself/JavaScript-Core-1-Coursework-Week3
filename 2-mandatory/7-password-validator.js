@@ -22,15 +22,31 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
+  
 function validatePasswords(passwords) {
 
-}
+  let en = /(?=.*[a-z]+)/g
+  let cap = /(?=.*[A-Z]+)/g
+  let num = /(?=.*[0-9]+)/g
+  let re = /(?=.*[!#$%.&*]+)/g
 
+validated = passwords.map((pass, index) => {
+
+  return pass.length >= 5 && en.test(pass) && cap.test(pass) && 
+  num.test(pass) && re.test(pass) && passwords.indexOf(pass) === index;
+  
+}); return validated; 
+
+}      
+     
+
+ 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 const passwords1 = ["Se%5", "TktE.TJTU", "384#HsHF", "dvyyeyy!5", "tryT3729"]
 const passwords2 = ["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"]
 
+const { Duplex } = require('stream');
 const util = require('util');
 
 function test(test_name, actual, expected) {

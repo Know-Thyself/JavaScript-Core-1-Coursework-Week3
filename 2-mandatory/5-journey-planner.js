@@ -17,15 +17,22 @@
  Hint: search for string methods like Includes and IndexOf.
 */
 
+
+const { isString, isArray } = require("util"); /* I could not use isString as I got this pop up message that says isString is deprecated since v: 4.0.0. So I used typeof value instead. */
+
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
+  
   //edit code below
-  if (stringText) {
+  if (typeof value === 'string') {
     return stringText;
+  }
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
-}
+} 
 
 /*
   I am new to London and would like to know what transport I can take to different famous locations.
@@ -64,7 +71,15 @@ function checkCodeIsThere(stringText) {
   
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+
+
+function getTransportModes(array) {
+  
+  let newArray = array.splice(1);
+  return newArray;
+
+} console.log(getTransportModes);
+   
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +96,12 @@ function getTransportModes() {}
     
   Hint: Use the corresponding array method to decide if an element is member of an array.
 */
-function isAccessibleByTransportMode() {}
+
+function isAccessibleByTransportMode(londonLocations, strings) {
+
+     return londonLocations.includes(strings);  
+}
+
 
 /*
   Implement the function getLocationName that
@@ -92,7 +112,9 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(londonLocations) {
+  return londonLocations[0];
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -121,9 +143,13 @@ function getLocationName() {}
    
   Advanced challange: try to use arrow function when invoking an array method.
 */
+
 function journeyPlanner(locations, transportMode) {
   // Implement the function body
-}
+
+  return  locations.filter((londonLocations) => isAccessibleByTransportMode(londonLocations, transportMode)).map((londonLocations) => getLocationName(londonLocations));
+  
+} 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
